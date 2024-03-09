@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function check()
+        {
+            var a1=document.getElementById('uname').value;
+            var a2=document.getElementById('pas').value;
+            if(a1=='')
+            {
+                alert("Enter username");
+                document.getElementById("uname").focus();
+ 
+                return false;
+            }
+            else if(a2=='')
+            {
+                alert("Enter password");
+                document.getElementById("pas").focus();
+
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<form method="post" action="index.html">
+
+<div class="login-box">
+  <h1>Login</h1>
+  <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input type="text" placeholder="Username" id="uname">
+  </div>
+
+  <div class="textbox">
+    <i class="fas fa-lock"></i>
+    <input type="password" placeholder="Password" id="pas">
+  </div>
+  
+  <input type="submit" class="btn" value="Login" onclick="return check();">
+  
+  <h2><tr><td align="right"><a href="registration.html" >Register</a> </td></tr>
+  </h2>
+  
+</div>
+</form>
+</body>
+</html>

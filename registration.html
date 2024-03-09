@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function checkme()
+        {
+
+            if(!(document.getElementById('tp2').checked||document.getElementById('tp').checked||document.getElementById('tp1').checked))
+
+            {
+                alert("Select title");
+                return false;
+            }
+            var a4=document.getElementById('fname').value;
+            if(a4=='')
+            {
+                alert("Enter First Name");
+                document.getElementById("fname").focus();
+                return false;
+            }
+
+            if(document.getElementById('lname').value=='')
+            {
+                alert("Enter Last Name");
+                document.getElementById("lname").focus();
+                return false;
+            }
+            if(document.getElementById('city').value=='')
+            {
+                alert("Enter City");
+                document.getElementById("city").focus();
+                return false;
+            }
+            var d = document.getElementById('state');
+            var value = state.options[d.selectedIndex].value;
+            if(value=='-------Select-------')
+            {
+            alert("Select a valid state");
+            return false;
+            }
+
+            if(document.getElementById('zip').value=='')
+            {
+                alert("Enter zip");
+                document.getElementById("zip").focus();
+                return false;
+            }
+
+            var fileInput = document.getElementById('photo');
+            var filePath = fileInput.value;
+
+            var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+            if (!allowedExtensions.exec(filePath))
+             {
+                alert('Invalid file type');
+                fileInput.value = '';
+                return false;
+            }
+            if(document.getElementById('email').value=='')
+            {
+                alert("Enter email address");
+                document.getElementById("email").focus();
+                return false;
+            }
+            if(document.getElementById('mobile').value=='')
+            {
+                alert("Enter phone number");
+                document.getElementById("mobile").focus();
+                return false;
+
+            }
+
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body class="b1">
+    <center>            
+        
+    <form action="login.html" method="POST" style="background-blend-mode:darken;">
+        <table cellpadding="5px" cellspacing="5px">
+            <tr>
+                <td colspan="2"><h1>
+        Member Registration</h1>
+    </td></tr>
+    
+            <tr><td><label>Title</label></td><td>
+            <input type="radio" name="tp" value="Mr" id="tp">Mr
+            <input type="radio" name="tp" value="Mrs" id="tp1">Mrs
+            <input type="radio" name="tp" value="Ms" id="tp2">Ms
+        </td>
+        <tr><td><label>First Name:</label></td>
+        <td><input type="text" id="fname" placeholder="First name"></td></tr>
+        <tr><td><label>Last Name:</label></td>
+        <td><input type="text" id="lname" placeholder="Last name"></td></tr>
+        <tr><td><label>City</label></td>
+        <td><input type="text" id="city"></td></tr>
+        
+        
+        
+        <tr><td><label>State</label></td>
+        <td><select id="state">
+            <option>-------Select-------</option>
+            <option>Kerala</option>
+            <option>Karnataka</option>
+            <option>Tamilnadu</option>
+        </select></td></tr>
+
+        <tr><td><label>Zip</label></td>
+        <td><input type="text" id="zip"></td></tr>
+
+        <tr><td><label>Upload Photo</label></td>
+        <td><input type="file" id="photo"></td></tr>
+
+
+        <tr><td><label>Email</label></td>
+        <td><input type="email" id="email"></td></tr>
+        
+        <tr><td><label>Mobile</label></td>
+        <td><input type="text" id="mobile" placeholder="10 Digit Mobile Number"></td></tr>
+        <tr><td colspan="2" align="center"><input type="submit" id="myButton" value="Submit" onclick="return checkme();">
+        <input type="reset" name="rst" value="Reset"></td></tr>
+    </table>
+    </form>
+    </center>
+
+</body>
+</html>
